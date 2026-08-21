@@ -72,3 +72,40 @@ Con '?' pueden mirar todos los comandos que permite el simualador, junto con una
 Si los resultados de su simulador coinciden con los del ref_sim  van bien ;). 
 Buena suerte!
 
+Entorno de Python (venv)
+Para las herramientas de soporte y scripts de testing, se recomienda utilizar un entorno virtual de Python:
+
+### Crear el entorno virtual:
+
+
+     python3 -m venv venv
+
+
+**Activar el entorno**
+
+En Linux/macOS: 
+
+     source venv/bin/activate
+
+**Instalar dependencias**:
+
+     pip install -r requirements.txt
+
+### Automatización de Tests (solamente Linux o Mac)
+Existe un script llamado **run_test.sh** diseñado para facilitar la corrección y el debugging. Este script realiza las siguientes acciones automáticamente:
+
+- Busca todos los archivos .s dentro de la carpeta /inputs/asm.
+
+- Si quieren probar sus tests propios de formato .s, pueden colocarlos en la carpeta /inputs/custom_asm
+
+- Los compila utilizando asm2hex.
+
+- Ejecuta el código de máquina resultante tanto en tu simulador como en el simulador de referencia.
+
+- Compara los volcados de memoria y registros (dumps) mediante pruebas de pytest.
+
+Para ejecutarlo, simplemente utiliza:
+
+     chmod +x run_test.sh
+     ./run_test.sh
+
