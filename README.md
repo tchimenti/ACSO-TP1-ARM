@@ -106,6 +106,6 @@ Existe un script llamado **run_test.sh** diseñado para facilitar la corrección
 
 Para ejecutarlo, simplemente utiliza:
 
-     chmod +x run_test.sh
-     ./run_test.sh
+     chmod +x run_tests.sh
+     ./run_tests.sh
 
